@@ -1,0 +1,19 @@
+---
+  2 #Gerenciamento de pacotes e atualização do sistema operacional
+  3 - name: Atualizacao do sistema operacional
+  4   yum: name=* state=latest update_cache=yes
+  5
+  6 - name: Instalacao de pacotes
+  7   yum:
+  8     name: "{{ packages }}"
+  9     state: latest
+ 10   vars:
+ 11     packages:
+ 12       - net-tools
+ 13       - vim
+ 14       - nmap
+ 15
+ 16 #Configuração do timezone
+ 17 - name: Configurando timeZone
+ 18   file: src=/usr/share/zoneinfo/America/Sao_Paulo dest=/etc/localtime state=link force=yes
+ ...
