@@ -3,4 +3,5 @@
 
 
 Este respositório tem o objetivo de armazenar os scrips de estudos relacinados ao ansible. 
- - Curso: Udemy
+ - Plataforma: Udemy
+    - Curso: Ansible para SysAdmin
