@@ -20,4 +20,8 @@
  #copia de arquivos usando as tasks
   - name: Copiando arquivos de backup
     copy: src=backup.tar.xz dest=/tmp/backup.tar.xz
+
+#Copiando um template
+- name: Copiando um template
+  template: src=motd dest=/etc/motd force=yes owner=root group=root
  ...
