@@ -1,0 +1,7 @@
+---
+# Instalacao do php
+
+- name: instalacao do pacote php
+  apt: name=php state=latest
+...
+
