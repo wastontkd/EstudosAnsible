@@ -1,0 +1,47 @@
+---
+#instalação do docker no servidor
+#incluindo uma condição para verificar se o servidor é o correto a ser instalado
+
+
+#atualizando repositorio
+- name: Atualizando repositorio
+  apt:
+    update_cache: yes
+
+
+#instalando dependencias extras
+- name: Instalacao dependencias.
+  apt:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+
+#Executando o curl necessário para baixar o dockerCE
+- name: Executando o Curl
+  shell: 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -'
+
+#adicionandos os repositorios
+- name: Adicionando Repositório do dockerCE
+  ansible.built.apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+    state: present
+
+#atualizando repositório após a inclusão do repositorio do docker
+- name: Atualizando repositorio
+  apt:
+    update_cache: yes
+
+#instalar o docker e suas dependencias.
+name: Instalacao do docker e suas dependencias.
+apt:
+  name: "{{ packages }}"
+  state: latest
+vars:
+  packages:
+    - docker-ce
+    ...
