@@ -1,5 +1,6 @@
 ---
  #Gerenciamento de pacotes e atualização do sistema operacional
+ #testando novamente agora na branch master
 - name: Atualizacao do sistema operacional
   yum: name=* state=latest update_cache=yes
  
