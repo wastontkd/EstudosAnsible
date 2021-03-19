@@ -1,5 +1,6 @@
 ---
  #Gerenciamento de pacotes e atualização do sistema operacional
+ #testando o commit em uma nova branch
 - name: Atualizacao do sistema operacional
   yum: name=* state=latest update_cache=yes
  
