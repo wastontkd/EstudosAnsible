@@ -2,6 +2,7 @@
  #Gerenciamento de pacotes e atualização do sistema operacional
  #testando novamente agora na branch master
  #testando o commit em uma nova branch
+ #git mais um teste
 
 - name: Atualizacao do sistema operacional
   yum: name=* state=latest update_cache=yes
